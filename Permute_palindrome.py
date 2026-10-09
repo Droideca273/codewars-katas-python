@@ -1,13 +1,16 @@
-def permute_a_palindrome(input):
-    mi_conjunto = set()
-    for i in range(len(input)):
-        if (input[i]) in mi_conjunto:
-            mi_conjunto.remove(input[i])
+def permute_a_palindrome(string):
+    string=string.lower()
+    string=string.split (" ")
+    string=''.join(string)
+    lista1 = []
+    for i in range (len(string)):
+        if string[i] in lista1:
+            lista1.remove(string[i])
         else:
-            mi_conjunto.add(input[i])
-    if len(input)%2==0 and len(mi_conjunto)==0:
+            lista1.append(string[i])
+    if len(string)%2 == 1 and len(lista1)==1:
         return True
-    elif (len(input)%2==1 or len(input)==1) and len(mi_conjunto)==1:
+    elif len(string)%2 == 0 and len(lista1)==0:
         return True
-    else:
+    else :
         return False
