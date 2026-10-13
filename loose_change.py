@@ -15,4 +15,4 @@ def loose_change(cents):
         cents=cents-(nickels*5)
     if cents>=0:
         pennies=cents
-    return {'Nickels': nickels,'Pennies': pennies,'Dimes': dimes,'Quarters': quarters}
+    return {'Nickels': nickels,'Pennies': pennies,'Dimes': dimes,'Quarters': quarters} # Formato diccionario

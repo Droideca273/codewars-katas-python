@@ -1,12 +1,12 @@
 def evil(n):
-    o=0
-    res=f"{n:b}"
-    tra=len(res)
-    for i in range(0,tra,1):
-        if (res[i]=="1"):
-            o=o+1
-    if o % 2 == 0:
-        men = "It's Evil!"
+    cantidad_unos=0
+    numero_binario=f"{n:b}"
+    medida_binario=len(res)
+    for i in range(0,medida_binario,1):
+        if (numero_binario[i]=="1"):
+            cantidad_unos=cantidad_unos+1
+    if cantidad_unos % 2 == 0:
+        resultado = "It's Evil!"
     else:
-        men = "It's Odious!"
-    return(men)
+        resultado = "It's Odious!"
+    return(resultado)

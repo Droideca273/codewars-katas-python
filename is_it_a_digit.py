@@ -1,6 +1,6 @@
 def is_digit(n):
     if len(n)==1 and n.isdigit():
-        dig=True
+        resultado=True
     else:
-        dig=False
-    return(dig)
+        resultado=False
+    return(resultado)

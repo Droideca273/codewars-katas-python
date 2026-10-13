@@ -1,9 +1,9 @@
 def find_it(seq):
-    lista1 = []
+    lista_numero_impar = []
     for i in range (len(seq)):
-        if seq[i] in lista1:
-            lista1.remove(seq[i])
+        if seq[i] in lista_numero_impar:
+            lista_numero_impar.remove(seq[i])
         else:
-            lista1.append(seq[i])
-    resultado=lista1[0]
+            lista_numero_impar.append(seq[i])
+    resultado=lista_numero_impar[0]
     return resultado

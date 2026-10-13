@@ -1,8 +1,8 @@
 def repeats(array):
-    mi_conjunto = set()
+    conjunto_numeros_impares = set()
     for i in range(len(array)):
-        if (array[i]) in mi_conjunto:
-            mi_conjunto.remove(array[i])
+        if (array[i]) in conjunto_numeros_impares:
+            conjunto_numeros_impares.remove(array[i])
         else:
-            mi_conjunto.add(array[i])
-    return(sum(mi_conjunto))
+            conjunto_numeros_impares.add(array[i])
+    return(sum(conjunto_numeros_impares))
