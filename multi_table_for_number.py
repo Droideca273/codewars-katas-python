@@ -4,4 +4,6 @@ def multiTable(multiplicando):
         r = multiplicador * multiplicando
         tabla_de_multiplicar.append(f"{multiplicador} * {multiplicando} = {r}")
     return "\n".join(tabla_de_multiplicar)
+
+
 print(multiTable(5))

@@ -5,4 +5,4 @@ def repeats(array):
             conjunto_numeros_impares.remove(array[i])
         else:
             conjunto_numeros_impares.add(array[i])
-    return(sum(conjunto_numeros_impares))
+    return sum(conjunto_numeros_impares)
