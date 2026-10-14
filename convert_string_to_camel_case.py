@@ -1,6 +1,6 @@
 def to_camel_case(text):
-    text = text.replace("_", "-")
-    palabras = text.split("-")
+    texto_alterado = text.replace("_", "-")
+    palabras = texto_alterado.split("-")
     resultado = palabras[0]
     for i in range(1, len(palabras)):
         palabra_mayuscula = palabras[i].capitalize()

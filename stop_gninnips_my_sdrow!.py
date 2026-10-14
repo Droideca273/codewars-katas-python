@@ -1,13 +1,13 @@
 def spin_words(sentence):
-    sentence = sentence.split(" ")
+    sentence_alterada = sentence.split(" ")
     resultado = ""
-    if len(sentence[0]) >= 5:
-        resultado = sentence[0][::-1]
+    if len(sentence_alterada[0]) >= 5:
+        resultado = sentence_alterada[0][::-1]
     else:
-        resultado = sentence[0]
-    for i in range(1, len(sentence)):
-        if len(sentence[i]) >= 5:
-            resultado = resultado + " " + sentence[i][::-1]
+        resultado = sentence_alterada[0]
+    for posicion in range(1, len(sentence_alterada)):
+        if len(sentence_alterada[posicion]) >= 5:
+            resultado = resultado + " " + sentence_alterada[posicion][::-1]
         else:
-            resultado = resultado + " " + sentence[i]
+            resultado = resultado + " " + sentence_alterada[posicion]
     return resultado

@@ -28,16 +28,21 @@ def alphabet_position(text):
         "z",
     ]
     palabra_codificada = ""
-    text = text.lower()
-    text = text.split(" ")
-    text = "".join(text)
-    for i in range(len(text)):
-        if text[i] in alfabeto:
-            for j in range(len(alfabeto)):
-                if alfabeto[j] == text[i] and palabra_codificada == "":
-                    palabra_codificada = palabra_codificada + str(j + 1)
-                elif alfabeto[j] == text[i]:
-                    palabra_codificada = palabra_codificada + " " + str(j + 1)
+    text_alterado = text.lower()
+    text_alterado = text_alterado.split(" ")
+    text_alterado = "".join(text_alterado)
+    for posicion_texto in range(len(text_alterado)):
+        if text_alterado[posicion_texto] in alfabeto:
+            for posicion_alfabeto in range(len(alfabeto)):
+                if (
+                    alfabeto[posicion_alfabeto] == text_alterado[posicion_texto]
+                    and palabra_codificada == ""
+                ):
+                    palabra_codificada = palabra_codificada + str(posicion_alfabeto + 1)
+                elif alfabeto[posicion_alfabeto] == text_alterado[posicion_texto]:
+                    palabra_codificada = (
+                        palabra_codificada + " " + str(posicion_alfabeto + 1)
+                    )
         else:
             None
     return palabra_codificada
