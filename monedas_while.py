@@ -1,5 +1,5 @@
 def euros(n):
-    dinero=n[:]
+    dinero=n
     monedas=[5,2,1]
     cantidad_monedas=[0,0,0]
     moneda=0
