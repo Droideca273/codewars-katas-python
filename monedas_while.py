@@ -1,13 +1,14 @@
 def euros(n):
+    dinero=n[:]
     monedas=[5,2,1]
     cantidad_monedas=[0,0,0]
     moneda=0
-    if type(n) is not int or n<0:
+    if type(dinero) is not int or dinero<0:
         return None
-    while n>0:
-        if n//monedas[moneda]>=0:
-            cantidad_monedas[moneda]=n//monedas[moneda]
-            n=n%monedas[moneda]
+    while dinero>0:
+        if dinero//monedas[moneda]>=0:
+            cantidad_monedas[moneda]=dinero//monedas[moneda]
+            dinero=dinero%monedas[moneda]
         else:
             moneda+=1
     return (tuple(cantidad_monedas))
