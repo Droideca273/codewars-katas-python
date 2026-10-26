@@ -1,8 +1,8 @@
 def euros(n):
     monedas=[5,2,1]
     cantidad_monedas=[0,0,0]
-    for i in range(len(monedas)):
-        if n//monedas[i]>=1:
-            cantidad_monedas[i]=n//monedas[i]
-            n=n%monedas[i]
+    for moneda in range(len(monedas)):
+        if n//monedas[moneda]>=1:
+            cantidad_monedas[moneda]=n//monedas[moneda]
+            n=n%monedas[moneda]
     return (tuple(cantidad_monedas))
