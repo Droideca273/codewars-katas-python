@@ -18,15 +18,15 @@ def devolver_cambio(dinero_inicial):
     
 
 print(devolver_cambio(8))
-# >>> (1, 1, 1)  # una de 5 cénts, una de 2 cénts y una de 1 cént.
+# >>> (0, 0, 1, 1, 1)  
 print(devolver_cambio(5))
-# >>> (1, 0, 0)  # una 5 cénts, ninguna de 2 cénts y ninguna de 1 cént.
+# >>> (0, 0, 1, 0, 0)  
 print(devolver_cambio(29))
-# >>> (5, 2, 0)  # cinco de 5 cénts, dos de 2 cénts y ninguna de 1 cént.
+# >>> (1, 0, 1, 2, 0)  
 print(devolver_cambio(0))
-# >>> (0, 0, 0) # ninguna de 5 cénts, ninguna de 2 cénts y 1 de cénts.
+# >>> (0, 0, 0, 0, 0) 
 print(devolver_cambio(170))
-# >>> (34, 0, 0)  # treinta y cuatro de 5 cénts, ninguna de 2 cénts y ninguna de 1 cént.
+# >>> (8, 1, 0, 0, 0)  
 print(devolver_cambio(267))
-# >>> (53, 1, 0)  # cincuenta y tres de 5 cénts, una de 2 cénts y ninguna de 1 cént.
+# >>> (13, 0, 1, 1, 0)  
 
