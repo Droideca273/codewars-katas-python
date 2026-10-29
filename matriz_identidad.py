@@ -1,17 +1,11 @@
 def esMatrizIdentidad(matrix):
-    if len(matrix) < 2 or len(matriz) != len(matriz[0]):
-            return False
-    for lista in range(len(matriz)):
-        for elemento in range(len(matriz)):
-            if lista == elemento:
-                if matriz[lista][elemento] != 1:
-                    return False
-            else:
-                if matriz[lista][elemento] != 0:
-                    return False
+    if len(matrix) < 2 or len(matrix) != len(matrix[0]):
+        return False
+    for lista in range(len(matrix)):
+        for elemento in range(len(matrix)):
+            if (lista == elemento and matrix[lista][elemento] != 1) or (lista != elemento and matrix[lista][elemento] != 0):
+                return False
     return True
-
-
 
 # Casos test:
 
@@ -51,7 +45,7 @@ assert esMatrizIdentidad(matrix7) == False
 #>>>False           
 
 
-# casos test que no satisfacen la precondicion de que la matriz sea cuadrada (assert):
+# casos test que no satisfacen la precondicion de que la matrix sea cuadrada (assert):
 
 matrix4 = [[1,0,0,0],
            [0,1,1,0],
