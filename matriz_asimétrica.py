@@ -3,9 +3,8 @@ def esAntisimetrica(matriz):
         return False
     for lista in range(len(matriz)):
         for elemento in range(len(matriz)):
-            if lista != elemento:
-                if matriz[lista][elemento] != -(matriz[elemento][lista]):
-                    return False
+            if lista != elemento and matriz[lista][elemento] != -(matriz[elemento][lista]):
+                return False
     return True
 
 
