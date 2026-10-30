@@ -1,43 +1,52 @@
 def esAntisimetrica(matriz):
-    if len(matriz) < 2 or len(matriz) != len(matriz[0]):
+    if len(matriz) < 2:
         return False
+    for i in matriz:
+        if len(i) != len(matriz):
+            return False
     for lista in range(len(matriz)):
         for elemento in range(len(matriz)):
             if lista != elemento and matriz[lista][elemento] != -(matriz[elemento][lista]):
                 return False
     return True
 
-if __name__ == "__main__":
-    # Casos Test:
+if __name__ == '__main__':
+    # Test Cases:
 
-    assert esAntisimetrica([[0, 1, 2],
-                            [-1, 0, 3], 
-                            [-2,-3, 0]]) == True, "Fallo caso 1"
-    # >>> True
+    assert esAntisimetrica([ [0, 1, 2],
+                             [-1, 0, 3],
+                             [-2, -3, 0]]) is True
 
     assert esAntisimetrica([[0, 0, 0],
-                            [0, 0, 0], 
-                            [0, 0, 0]]) == True, "Fallo caso 2"
-    # >>> True
+                             [0, 0, 0],
+                             [0, 0, 0]]) is True
 
-    assert esAntisimetrica([[0, 1, 2], 
-                            [-1, 0, -2], 
-                            [2, 2, 3]]) == False, "Fallo caso 3"
-    # >>> False
+    assert esAntisimetrica([ [0, 1, 2],
+                             [-1, 0, -2],
+                             [2, 2, 3]]) is False
 
-    assert esAntisimetrica([[1, 2, 5], 
-                            [0, 1, -9], 
-                            [0, 0, 1]]) == False, "Fallo caso 4"
-    # >>> False
+    assert esAntisimetrica([ [1, 2, 5],
+                             [0, 1, -9],
+                             [0, 0, 1]]) is False
+    
+    assert esAntisimetrica([ [1, 2,  5],
+                             [-2, 1, -9],
+                             [-5, 0, 1]]) is False
 
-    matriz4 = [[1, 0, 0, 0], 
-            [0, 1, 1, 0], 
-            [0, 0, 0, 1]]
 
-    assert esAntisimetrica(matriz4) == False, "Fallo caso 5"
-    # >>>False
+    # casos test que no satisfacen la precondicion de que la matriz sea cuadrada:
+    matriz5 = [[1, 0, 0, 0],
+               [0, 1, 1, 0],
+               [0, 0, 0, 1]]
 
-    matriz5 = [[1, 0, 0, 0, 0, 0, 0, 0, 0]]
+    assert esAntisimetrica(matriz5) is False
 
-    assert esAntisimetrica(matriz5) == False, "Fallo caso 6"
-    # >>>False
+    matriz6 = [[1, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+    assert esAntisimetrica(matriz6) is False
+
+    matriz7 = [[1, 0, 0, 0],
+               [0, 1, 0],
+               [0, 0, 0, 1]]
+
+    assert esAntisimetrica(matriz7) is False
