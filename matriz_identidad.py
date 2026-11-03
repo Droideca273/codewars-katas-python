@@ -1,9 +1,14 @@
-def esMatrizIdentidad(matrix):
+def esMatrizCuadrada(matrix):
     if len(matrix) < 2:
         return False
-    for i in matrix:
-        if len(i) != len(matrix):
-                return False
+    for fila in matrix:
+        if len(fila) != len(matrix):
+            return False
+    return True
+
+def esMatrizIdentidad(matrix):
+    if not esMatrizCuadrada(matrix):
+        return False
     for lista in range(len(matrix)):
         for elemento in range(len(matrix)):
             if (lista == elemento and matrix[lista][elemento] != 1) or (lista != elemento and matrix[lista][elemento] != 0):
@@ -52,7 +57,7 @@ if __name__ == '__main__':
     assert esMatrizIdentidad(matrix7) is False
 
 
-    # casos test que no satisfacen la precondicion de que la matrix sea cuadrada:
+    # casos test que no satisfacen la precondicion de que la matriz sea cuadrada:
 
     matrix4 = [[1, 0, 0, 0],
                [0, 1, 1, 0],
@@ -69,3 +74,21 @@ if __name__ == '__main__':
                [0, 0, 0, 1]]
 
     assert esMatrizIdentidad(matrix9) is False
+
+
+    # casos test matriz cuadrada:
+    assert esMatrizCuadrada([[1, 0, 0, 0],
+                             [0, 1, 1, 0],
+                             [0, 0, 0, 1]]) is False
+
+    assert esMatrizCuadrada([[1, 0, 0, 0, 0, 0, 0, 0, 0]]) is False
+
+    assert esMatrizCuadrada([[1, 0, 0, 0],
+                             [0, 1, 0],
+                             [0, 0, 0, 1]]) is False
+
+    assert esMatrizCuadrada([[0, 0, 0],
+                             [0, 0, 0],
+                             [0, 0, 0]]) is True
+
+    print("All tests passed")
