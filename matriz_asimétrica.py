@@ -1,9 +1,14 @@
-def esAntisimetrica(matriz):
+def esMatrizCuadrada(matriz):
     if len(matriz) < 2:
         return False
-    for i in matriz:
-        if len(i) != len(matriz):
+    for fila in matriz:
+        if len(fila) != len(matriz):
             return False
+    return True
+
+def esAntisimetrica(matriz):
+    if not esMatrizCuadrada(matriz):
+        return False
     for lista in range(len(matriz)):
         for elemento in range(len(matriz)):
             if lista != elemento and matriz[lista][elemento] != -(matriz[elemento][lista]):
@@ -50,3 +55,21 @@ if __name__ == '__main__':
                [0, 0, 0, 1]]
 
     assert esAntisimetrica(matriz7) is False
+
+
+    # casos test matriz cuadrada:
+    assert esMatrizCuadrada([[1, 0, 0, 0],
+                            [0, 1, 1, 0],
+                            [0, 0, 0, 1]]) is False
+
+    assert esMatrizCuadrada([[1, 0, 0, 0, 0, 0, 0, 0, 0]]) is False
+
+    assert esMatrizCuadrada([[1, 2, 3, 4],
+                            [-2, 1, 5],
+                            [-3, -5, 1, 1]]) is False
+
+    assert esMatrizCuadrada([[0, 0, 0],
+                            [0, 0, 0],
+                            [0, 0, 0]]) is True
+
+    print("All tests passed")
