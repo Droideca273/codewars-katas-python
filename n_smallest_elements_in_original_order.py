@@ -17,7 +17,7 @@ def first_n_smallest(arr, n):
 
     return resultado
 # Casos tests
-if __name__ in '__main__':
+if __name__ == '__main__':
   assert first_n_smallest ([1,2,3,4,5],3) == [1,2,3]
   assert first_n_smallest([5,4,3,2,1],3 )== [3,2,1] 
   assert first_n_smallest([1,2,3,1,2],3) == [1,2,1]
