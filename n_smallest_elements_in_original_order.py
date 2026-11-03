@@ -1,11 +1,12 @@
 def first_n_smallest(arr, n):
+    argumento = arr[:]
     if n <= 0:
         return []
     if n >= len(arr):
         return arr[:]
 
     # Obtenemos los n elementos más pequeños
-    smallest = sorted(arr)[:n]
+    smallest = sorted(argumento)[:n]
 
     # Filtramos la lista original preservando el orden de aparición
     resultado = []
