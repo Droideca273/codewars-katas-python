@@ -9,9 +9,9 @@ def first_n_smallest(arr, n):
 
     # Filtramos la lista original preservando el orden de aparición
     resultado = []
-    for x in arr:
-        if x in smallest:
-            smallest.remove(x)
-            resultado.append(x)
+    for numero in arr:
+        if numero in smallest:
+            smallest.remove(numero)
+            resultado.append(numero)
 
     return resultado
