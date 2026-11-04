@@ -1,20 +1,19 @@
 def duplicate_encode(word):
-    letras_independientes = set()
-    letras_duplicadas = set()
-    palabra_encriptada = ""
-    palabra = word.lower()
-    for i in range(len(word)):
-        if palabra[i] in letras_independientes:
-            letras_independientes.remove(palabra[i])
-            letras_duplicadas.add(palabra[i])
+    palabra = word[:].lower()
+    letras_codificacion = {}
+    palabra_codificada = ""
+    for letra in palabra:
+        if letra not in letras_codificacion:
+            letras_codificacion[letra] = "("
         else:
-            if palabra[i] in letras_duplicadas:
-                None
-            else:
-                letras_independientes.add(palabra[i])
-    for j in range(len(word)):
-        if palabra[j] in letras_independientes:
-            palabra_encriptada = palabra_encriptada + "("
-        else:
-            palabra_encriptada = palabra_encriptada + ")"
-    return palabra_encriptada
+            letras_codificacion[letra] = ")"
+    for letra in palabra:
+        palabra_codificada = palabra_codificada + letras_codificacion[letra]
+    return "".join(palabra_codificada)
+
+if __name__ == '__main__':
+    assert duplicate_encode("din") == "((("
+    assert duplicate_encode("recede") == "()()()"
+    assert duplicate_encode("Success") == ")())())"
+    assert duplicate_encode("(( @") == "))(("
+    print("Bien hecho")
