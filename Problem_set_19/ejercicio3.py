@@ -32,19 +32,14 @@ courses = {
 
 
 def courses_offered(courses, hexamester):
-    return courses[hexamester]
+    res = []
+    for c in courses[hexamester]:
+        res.append(c)
+    return res
 
 if __name__ == '__main__':
-    assert courses_offered(courses, "feb2012") == { 'cs101': {'name': 'Building a Search Engine',
-                                                            'teacher': 'Dave',
-                                                            'assistant': 'Peter C.'},
-                                                    'cs373': {'name': 'Programming a Robotic Car',
-                                                            'teacher': 'Sebastian',
-                                                            'assistant': 'Andy'}}
-    assert courses_offered(courses, "jan2044") == { 'cs001': {'name': 'Building a Quantum Holodeck',
-                                                              'teacher': 'Dorina'},
-                                                    'cs003': {'name': 'Programming a Robotic Robotics Teacher',
-                                                              'teacher': 'Jasper'}}
+    assert courses_offered(courses, "feb2012") == ['cs101','cs373']
+    assert courses_offered(courses, "jan2044") == ['cs001','cs003']
 
 def is_offered(courses, course, hexamester):
     if hexamester in courses:
