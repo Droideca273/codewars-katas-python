@@ -4,10 +4,10 @@ def loose_change(cents):
     cents = int(cents)
     monedas_valor = {"Quarters": 25, "Dimes": 10, "Nickels": 5, "Pennies": 1}
     monedas_cantidad = {"Nickels": 0, "Pennies": 0, "Dimes": 0, "Quarters": 0}
-    for key in monedas_valor.keys():
-        if cents >= monedas_valor[key]:
-            monedas_cantidad[key] = (cents // monedas_valor[key])
-            cents = cents % monedas_valor[key]
+    for key, value in monedas_valor.items():
+        if cents >= value:
+            monedas_cantidad[key] = (cents // value)
+            cents = cents % value
         else:
             continue
     return monedas_cantidad
