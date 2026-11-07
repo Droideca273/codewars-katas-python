@@ -14,4 +14,9 @@ def stock_list(stocklist, categories):
     for key, valor in libros.items():
         resultado.append(f"({key} : {valor})")
     return (" - ").join(resultado)
-print(stock_list(["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"],["A", "B", "C", "W"]))
+if __name__ == '__main__':
+    assert stock_list(["ABART 20", "CDXEF 50", "BKWR 25", "BTSQ 89", "DRTY 60"], ["A", "B", "C", "W"]) == "(A : 20) - (B : 114) - (C : 50) - (W : 0)"
+    assert stock_list(["CBART 20", "CDXEF 50", "BKWR 25", "BTSQ 89", "DRTY 60"], ["A", "B", "C", "W"]) == "(A : 0) - (B : 114) - (C : 70) - (W : 0)"
+    assert stock_list(["BBAR 150", "CDXEF 50", "BKWR 25", "BTSQ 89", "DRTY 60"], ["A", "B", "C", "D"]) == "(A : 0) - (B : 264) - (C : 50) - (D : 60)"
+    assert stock_list([], ["A", "B"]) == ""
+    assert stock_list(["ABART 20"], []) == ""
