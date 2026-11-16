@@ -19,8 +19,25 @@ def filasValidas(sudoku):
     return True
 
 def columnasValidas(sudoku):
-    
+    for columna in range(len(sudoku)):
+        numerosEnColumna = []
+        for elemento in range(len(sudoku)):
+            numerosEnColumna.append(sudoku[elemento][columna])
+        for numero in range(1, len(sudoku) + 1):
+            if numero not in numerosEnColumna:
+                return False
+                
+    return True  # Si pasa todas las validaciones, las columnas son correctas
+
 def checkSudoku(sudoku):
+    if esMatrizCuadrada(sudoku) != True:
+        return False
+    if sonElementosEnteros(sudoku) != True:
+        return False
+    if filasValidas(sudoku) != True:
+        return False
+    if columnasValidas(sudoku) != True:
+        return False
     return True
 
 correct = [[1,2,3],
