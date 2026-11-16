@@ -1,23 +1,26 @@
-def check_sudoku(sudoku):
-    longitud_sudoku = len(sudoku)
-    comparacion = list(range(1, longitud_sudoku + 1))
-    
+def esMatrizCuadrada(sudoku):
     for fila in sudoku:
-        if len(fila) != longitud_sudoku:
+        if len(fila) != len(sudoku):
             return False
-            
-        for val in fila:
-            if type(val) != int:
+    return True
+
+def sonElementosEnteros(sudoku):
+    for fila in sudoku:
+        for columna in fila:
+            if type(columna) != int:
                 return False
-            
-        if sorted(fila) != comparacion:
-            return False
-            
-    for col in range(longitud_sudoku):
-        columna = [sudoku[fila][col] for fila in range(longitud_sudoku)]
-        if sorted(columna) != comparacion:
-            return False
-            
+    return True
+
+def filasValidas(sudoku):
+    for fila in sudoku:
+        for indice in range(1, len(sudoku)+1):
+            if indice not in fila:
+                return False
+    return True
+
+def columnasValidas(sudoku):
+    
+def checkSudoku(sudoku):
     return True
 
 correct = [[1,2,3],
@@ -30,9 +33,9 @@ incorrect = [[1,2,3,4],
              [4,4,4,4]]
 
 incorrect2 = [[1,2,3,4],
-             [2,3,1,4],
-             [4,1,2,3],
-             [3,4,1,2]]
+              [2,3,1,4],
+              [4,1,2,3],
+              [3,4,1,2]]
 
 incorrect3 = [[1,2,3,4,5],
               [2,3,1,5,6],
@@ -44,12 +47,12 @@ incorrect4 = [['a','b','c'],
               ['b','c','a'],
               ['c','a','b']]
 
-incorrect5 = [ [1, 1.5],
-               [1.5, 1]]
+incorrect5 = [[1, 1.5],
+              [1.5, 1]]
 if __name__ == "__main__":
-    assert check_sudoku(correct) == True
-    assert check_sudoku(incorrect) == False
-    assert check_sudoku(incorrect2) == False
-    assert check_sudoku(incorrect3) == False
-    assert check_sudoku(incorrect4) == False
-    assert check_sudoku(incorrect5) == False
+    assert checkSudoku(correct) == True
+    assert checkSudoku(incorrect) == False
+    assert checkSudoku(incorrect2) == False
+    assert checkSudoku(incorrect3) == False
+    assert checkSudoku(incorrect4) == False
+    assert checkSudoku(incorrect5) == False
